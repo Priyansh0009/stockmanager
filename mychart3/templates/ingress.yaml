@@ -1,0 +1,33 @@
+kind: Ingress
+
+metadata:
+
+  name: stockmanager-service
+
+  annotations:
+
+    nginx.ingress.kubernetes.io/rewrite-target: /
+
+spec:
+
+  ingressClassName: ingress-xyz
+
+  rules:
+
+  - http:
+
+      paths:
+
+      - path: ./
+
+        pathType: Prefix
+
+        backend:
+
+          service:
+
+            name: test3
+
+            port:
+
+              number: 8030
